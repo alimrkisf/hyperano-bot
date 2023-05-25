@@ -169,22 +169,6 @@ def command_image(m):
 #         bot.send_message(cid, "Please try again")
 
 
-# filter on a specific message
-@bot.message_handler(func=lambda message: message.text is not None and ('س' and 'ل' and 'ا' and 'م') in message.text and (message.text.index('س') < message.text.index('ل') < message.text.index('ا') < message.text.index('م')))
-def command_text_hi(m):
-    bot.send_message(m.chat.id, "سلام و درود")
-
-@bot.message_handler(func=lambda message: message.text is not None and ((('خ' and 'و' and 'ب' and 'ی') in message.text and (message.text.index('خ') < message.text.index('و') < message.text.index('ب') < message.text.index('ی')))))
-def command_text_how_1(m):
-    bot.send_message(m.chat.id, "خوب هستم ممنون")
-@bot.message_handler(func=lambda message: message.text is not None and ((('چ' and 'ط' and 'و' and 'ر') in message.text and (message.text.index('چ') < message.text.index('ط') < message.text.index('و') < message.text.index('ر')))))
-def command_text_how_2(m):
-    bot.send_message(m.chat.id, "خوب هستم ممنون")
-@bot.message_handler(func=lambda message: message.text == 'چطوری')
-def command_text_how_3(m):
-    bot.send_message(m.chat.id, "خوب هستم ممنون")
-
-
 # default handler for every other text
 @bot.message_handler(func=lambda message: True, content_types=['text'])
 def command_default(m):
